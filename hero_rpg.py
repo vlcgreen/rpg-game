@@ -19,7 +19,7 @@ class Character:
             return True
     
     def print_status(self):
-        print("You have {} health and {} power.".format(self.Health, self.Power))
+        print("{} have {} health and {} power.".format(self.name, self.Health, self.Power))
 
 class Hero(Character):
     def __init__(self, name, health = 10, power = 5):
@@ -30,30 +30,30 @@ class Goblin(Character):
     def __init__(self, name, health = 6, power = 2):
         self.name = name
         super(Goblin, self).__init__(health, power)
-    def print_status(self):
-        print("The goblin has {} health and {} power.".format(self.Health, self.Power))
+    # def print_status(self):
+    #     print("The goblin has {} health and {} power.".format(self.Health, self.Power))
 
 class Zombie(Character):
-    def __init__(self, name, health = 1000, power = 2):
+    def __init__(self, name, health = 6, power = 2):
         self.name = name
         super(Zombie, self).__init__(health, power)
     def alive(self):
         return True
-    def print_status(self):
-        print("The zombie has {} health and {} power.".format(self.Health, self.Power))
+    # def print_status(self):
+    #     print("The zombie has {} health and {} power.".format(self.Health, self.Power))
 
 
 def main():
-    hero = Hero('hero')
-    goblin = Goblin('goblin')
-    zombie = Zombie('zombie')
+    hero = Hero('Jack')
+    goblin = Goblin('Gollum')
+    zombie = Zombie('Harold')
 
 
 
     while zombie.alive() and hero.alive():
         print()
         print("What do you want to do?")
-        print("1. fight goblin")
+        print("1. fight zombie")
         print("2. do nothing")
         print("3. flee")
         print("> ", end=' ')
